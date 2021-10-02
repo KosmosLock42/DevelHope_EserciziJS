@@ -1,0 +1,52 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's List</h2>
+      <table id="person-table">
+        <tbody></tbody>
+      </table>
+      <button id="add-row">Add row</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  function addRow() {
+    const tabella = document.querySelector("tbody");
+
+    const insert = tabella.insertRow(0);
+
+    let cellMakerName = insert.insertCell(0);
+    let cellMakerSurname = insert.insertCell(1);
+    let cellMakerAge = insert.insertCell(2);
+
+    let cellName = document.createElement("input");
+    cellName.type = "text";
+    cellName.placeholder = "First Name";
+    cellMakerName.appendChild(cellName);
+
+    let cellSurname = document.createElement("input");
+    cellSurname.type = "text";
+    cellSurname.placeholder = "Last Name";
+    cellMakerSurname.appendChild(cellSurname);
+
+    let cellAge = document.createElement("input");
+    cellAge.type = "number";
+    cellAge.placeholder = "Age";
+    cellMakerAge.appendChild(cellAge);
+
+    cellMakerName.style.border = "solid 2px black";
+    cellMakerSurname.style.border = "solid 2px black";
+    cellMakerAge.style.border = "solid 2px black";
+  }
+
+  
+  // function test(){
+  //    const green = push.style.backgroundColor = `green`;
+  // }
+ 
+ 
+ const push = document.querySelector("#add-row");
+   push.addEventListener("click", addRow);
+
+</script>

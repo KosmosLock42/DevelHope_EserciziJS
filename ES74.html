@@ -1,0 +1,51 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+
+
+    const form = document.querySelector("#person-form");
+
+    const tabella = document.createElement("tbody");
+    form.appendChild(tabella);
+
+    const insert = tabella.insertRow(0);
+
+    let cellMakerName = insert.insertCell(0);
+    let cellMakerSurname = insert.insertCell(1);
+    let cellMakerAge = insert.insertCell(2);
+
+    let cellName = document.createElement("input");
+    cellName.type = "text";
+    cellName.placeholder = "First Name";
+    cellMakerName.appendChild(cellName);
+
+    let cellSurname = document.createElement("input");
+    cellSurname.type = "text";
+    cellSurname.placeholder = "Last Name";
+    cellMakerSurname.appendChild(cellSurname);
+
+    let cellAge = document.createElement("input");
+    cellAge.type = "number";
+    cellAge.placeholder = "Age";
+    cellMakerAge.appendChild(cellAge);
+
+    cellMakerName.style.border = "solid 2px black";
+    cellMakerSurname.style.border = "solid 2px black";
+    cellMakerAge.style.border = "solid 2px black";
+  
+
+    
+
+
+
+
+</script>
