@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <div id="container">
+      <ul class="todo-list"></ul>
+    </div>
+  </body>
+</html>
+
+<script>
+  window.addEventListener("DOMContentLoaded", async () => {
+    let response = await fetch(`https://jsonplaceholder.typicode.com/todos`);
+    let list = await response.json();
+const classList = document.querySelector(`.todo-list`);
+
+    
+
+    const titles = list.forEach((element) => { 
+      const paper = document.createElement("li");  
+paper.textContent = element.title;
+
+    classList.appendChild(paper);
+
+    });
+
+  })
+
+</script>

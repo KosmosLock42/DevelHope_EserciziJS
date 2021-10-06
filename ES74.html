@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <body>
     <div id="container">
@@ -11,7 +12,13 @@
 
 <script>
 
+  // Caricamento del form //
 
+ document.addEventListener(`DOMContentLoaded`, initForm(), true);
+
+  // Generazione del form //
+
+  function initForm() {
     const form = document.querySelector("#person-form");
 
     const tabella = document.createElement("tbody");
@@ -26,25 +33,49 @@
     let cellName = document.createElement("input");
     cellName.type = "text";
     cellName.placeholder = "First Name";
+    cellName.id = "FN";
     cellMakerName.appendChild(cellName);
 
     let cellSurname = document.createElement("input");
     cellSurname.type = "text";
     cellSurname.placeholder = "Last Name";
+    cellSurname.id = "SN";
     cellMakerSurname.appendChild(cellSurname);
 
     let cellAge = document.createElement("input");
     cellAge.type = "number";
     cellAge.placeholder = "Age";
+    cellAge.id = "AG";
     cellMakerAge.appendChild(cellAge);
 
     cellMakerName.style.border = "solid 2px black";
     cellMakerSurname.style.border = "solid 2px black";
     cellMakerAge.style.border = "solid 2px black";
+  }
+
+    function submitPersonForm(form, cellName) {
+
+      nameInput = document.querySelector("#FN");
+      surnameInput = document.querySelector("#SN");
+      ageInput = document.querySelector("#AG");
+
+       const person = {
+        firstName: nameInput.value ,
+        lastName: surnameInput.value,
+        age: ageInput.value
+      };
+
+       console.log(person);
+
+    }
+
+     const push = document.querySelector("button");
+
   
 
-    
-
+    push.addEventListener(`click`, (e) => {
+      e.preventDefault();
+     submitPersonForm()});
 
 
 

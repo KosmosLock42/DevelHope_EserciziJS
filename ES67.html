@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;"></div>
+  </body>
+</html>
+
+<script>
+  
+document.addEventListener("DOMContentLoaded", async () => {
+  let response = await fetch(`https://jsonplaceholder.typicode.com/todos/4`);
+
+  let data = await response.json();
+
+  let accadue = document.createElement("h2");
+  accadue.textContent = `Titolo: ${data.title}`;
+  let chkbx = document.createElement("input");
+
+  chkbx.type = "checkbox";
+  chkbx.checked = data.completed;
+
+  let conteiner = document.querySelector(`#container`);
+
+
+  conteiner.appendChild(accadue);
+  conteiner.appendChild(chkbx);
+  
+
+
+})
+
+
+</script>
